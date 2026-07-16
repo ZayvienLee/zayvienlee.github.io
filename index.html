@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+	<head lang = "en">
+		<meta charset= "UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Title of Website Here</title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		<script src = "main.js" defer></script>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Main Topic</h1>
+		</header>
+		<nav class = "cls_mainnav"> <!--menu system-->
+			<button id = "hamIcon"></button>
+			<ul>
+				<li><button id = "page1btn">Home</button></li>
+				<li><button id = "page2btn">Types of Bowling Balls & Lanes</button></li>
+				<li><button id = "page3btn">Different Throwing Styles</button></li>
+				<li><button id = "page4btn">Trivia, Quiz & Mini-Game</button></li>
+			</ul>
+		</nav>
+		<main>
+			<section class = "page" id = "page1">
+				<h2>Introduction to Bowling</h2>
+				<p>Bowling is a recreational and competitive sport where players roll a heave ball down a wooden 
+				or synthetic land to knock down 10 pins arranged in a triangle. A standard game consists of 10 frames, 
+				with players receiving a maximum of two rolls per frame to clear all the pins.
+				</p>
+				
+				<h3>Objectives and Scoring</h3>
+				<p>The goal is to achieve a score as high as possible, with a maximum of 300, by consistently 
+				knocking down pins. The point system rewards accuracy and consistent hits.</p>
+				<ul>
+					<li>Pinfall: Each pin knocked down is worth 1 point.</li>
+					<li>Strike ("X"): Knocking down all 10 pins on the first roll awards 10 points plus the total pinfall from the next two rolls.</li>
+					<li>Spare ("/"): Knocking down the remaining pins on the second roll awards 10 points plus the pinfall from the next roll.</li>
+					<li>The 10th Frame: If a player rolls a strike or spare in the 10th frame, they are awarded extra bonus rools to finalise their score.</li>
+					<li>Foul: Players should release the ball and stop before the foul line on their approach. Should they step over the foul line, they will be awarded a zero for their roll.</li>
+				</ul>
+				
+				<h3>Equipment and Setup</h3>
+				<ul>
+					<li>
+						The Lane: A standard bowling lane is 60 feet long and made of polished wood or synthetic material.
+						It is lightly coated with lubricating oil in specific patterns that affect the ball's movement.
+					</li>
+					<li>
+						The Ball: Typically weighing between 6 and 16 pounds, or 2.7 and 7.3 kg, standard balls feature drilled holes for a secure grip. 
+						The thumb, middle finger, and ring finger are to be placed into these holes when bowling.
+					</li>
+					<li>
+						Shoes: Players wear specialized bowling shoes with sliding soles on one foot to control their momentum before release, and a rubber sole on the other for braking.
+					</li>
+				</ul>
+			</section>
+			
+			<section class = "page" id = "page2">
+				<h2>Types of Bowling Balls & Lanes</h2>
+				<p>Bowling Balls and Lanes are not all the same. They each have different properties and are matched based on the friction and oil patterns.</p>
+				<p>
+					Bowling Balls range from straight-rolling plastic to high-hooking reactive resin, while lanes are coated with synthetic oil applied in
+					specific "patterns", affecting and dictating how the ball skids, grips, and hooks into the pins.				
+				</p>
+				
+				<article>
+					<h3>Types of Bowling Balls</h3>
+					<p>
+						Bowling balls are primarily categorized by their outer shell (coverstock) and internal core, 
+						which dictate how much friction they generate on the lane and how sharply they hook. 
+						The four main types range from beginner plastic balls to aggressive reactive resin designs.
+					</p>
+					
+					<div class = "gridcontainer">
+						<article>
+							<h4>Plastic (Polyester) Balls</h4>
+							<!-- <img src = "">-->
+							<!-- <figcaption></figcaption> -->
+						</article>
+						
+						<article>
+							<h4>Description</h4>
+							<ul>
+								<li>Best for:</li>
+									<ul>
+										<li>Beginners</li>
+										<li>Straight Shots</li>
+										<li>Spare Shooting</li>
+									</ul>
+								<li>
+									Features:
+									<ul>
+										<li>Very hard, smooth surface with a low friction coefficient</li>
+										<li>They roll straight and resist hooking; ideal for hitting corner pins (e.g. 7-pin or 10-pin)</li>
+										<li>Most generic "house balls" at bowling alleys are plastic</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Urethane Balls</h4>
+						</article>
+						
+						<article>
+							<h4>Description</h4>
+							<ul>
+								<li>Best for:
+									<ul>
+										<li>Amateur Bowlers</li>
+										<li>Medium-dry Lanes</li>
+										<li>Sport Oil Patterns</li>
+									</ul>
+								</li>
+								<li>
+									Features:
+									<ul>
+										<li>Urethane provides more friction than plastic, resulting in a smooth, continuous arcing motion.</li>
+										<li>Offer excellent control and are highly favored by players needing a predictable reaction when reactive balls hook too wildly.</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Reactive Resin Balls</h4>
+						</article>
+						
+						<article>
+							<h4>Description</h4>
+							<ul>
+								<li>Best for:
+									<ul>
+										<li>Advanced and competitive bowlers playing on various oil patterns.</li>
+									</ul>
+								</li>
+								<li>Features:
+									<ul>
+										<li>Made from advanced resin compounds, these balls absorb lane oil to create aggressive friction, resulting in a dramatic, sharp "hook" into the pocket. They come in three variations</li>
+										<ul>
+											<li>Solid: Reads the lane earlier for a smooth, even hook.</li>
+											<li>Pearl: Skids further down the lane before snapping sharply at the pins.</li>
+											<li>Hybrid: Combines both solid and pearl materials for a versatile mid-lane and backend reaction.</li>
+										</ul>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Particle (ProActive) Balls</h4>
+						</article>
+						
+						<article>
+							<h4>Description</h4>
+							<ul>
+								<li>Best for:
+									<ul>
+										<li>Heavy oil lane conditions</li>
+									</ul>
+								</li>
+								<li>Features:
+									<ul>
+										<li>Features microscopic textured particles, like glass, ceramic, or carbon, embedded in the resin coverstock.</li>
+										<li>Cut right through heavy oil and create immense friction</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Core Types</h4>
+						</article>
+						
+						<article>
+							<h4>Description</h4>
+							<p>
+								 Inside the ball, the symmetrical core provides a smooth, predictable roll, while the asymmetrical core creates more angle and flare on the backend.
+							</p>
+						</article>
+					</div>
+				</article>
+				
+				<article>
+					<h3>Lane Surface Types</h3>
+					<p>
+						Bowling lanes are broadly categorized into wood and synthetic surfaces, which drastically affect ball friction and hook potential.
+					</p>
+					<p>
+						A standard bowling lane is 60 feet long from the foul line to the headpin and is divided into three main zones. To protect the wood or synthetic surface, lanes are coated with a silicone-based oil.
+					</p>
+					
+					<p>Overview of the Lane:</p>
+					<ul>
+						<li>The Front End: The first 15–20 feet where the lane machine applies a heavy volume of oil. Balls will skid here.</li>
+						<li>The Mid-Lane: The middle of the lane where the oil transitions. This is where the ball begins to build rotational force.</li>
+						<li>The Backend: The final 20 feet leading to the pins, which typically has no applied oil. When a ball exits the oily section and hits this dry friction, it hooks.</li>
+					</ul>
+					
+					<p>Common Lane Patterns:</p>
+					<ul>
+						<li>House Shot: Standard recreation oil pattern. It typically puts heavier oil in the center and dry oil on the edges, acting as a "funnel" to help the ball hook into the pocket.</li>
+						<li>Sport Shot: Competitive, flat patterns used in tournaments (e.g., PBA patterns). They lack the forgiving "funnel" and demand precise accuracy and ball-reaction adjustments.</li>
+					</ul>
+					
+					<div class = "gridcontainer">					
+						<article>
+							<h4>Wood Lanes</h4>
+						</article>
+						
+						<article>
+							<h4>Features:</h4>
+							<ul>
+								<li>The traditional surface</li>
+								<li>Often built using maple for the high-impact area, and pine for the pin area</li>
+								<li>Provides the highest friction, allowing the ball to slow down and hook earlier</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Synthetic Lanes</h4>
+						</article>
+						
+						<article>
+							<h4>Features:</h4>
+							<ul>
+								<li>The modern industry standard</li>
+								<li>Made of extremely hard-pressed wood coated in a high-density plastic/phenolic material</li>
+								<li>They offer lower friction and a more consistent skid</li>
+								<li>Allows the ball to conserve energy longer and snap harder on the backend</li>
+							</ul>
+						</article>
+						
+						<article>
+							<h4>Overlay/Guardian Lanes</h4>
+						</article>
+						
+						<article>
+							<h4>Features:</h4>
+							<ul>
+								<li> A softer, synthetic-like shield placed directly over older wooden lanes to extend their lifespan, resulting in an earlier ball hook</li>
+							</ul>
+						</article>
+					</div>
+				</article>
+			</section>
+			
+			<section class = "page" id = "page3">
+				<h2>Different Throwing Styles</h2>
+				
+				<p>No player has the exact same style of throwing a bowling ball. 
+				There are many different ways in which to deliver, known as a throw or roll, the bowling ball in order to advance it towards the pins in an accurate and powerful manner.</p>
+								
+				<p>Bowling styles generally fall into six main categories based on release, ball speed, and rate of revolution:</p>
+				
+				<ul>
+					<li>Strokers (classic, smooth)</li>
+					<li>Crankers (high revs, power)</li>
+					<li>Tweeners (versatile balance)</li>
+					<li>Two-Handers (modern, maximum spin)</li>
+					<li>Spinners (helicopter spin)</li>
+					<li>Straight Bowlers (beginner-friendly)</li>
+				</ul>
+				
+				<br>
+				
+				<article>
+					<h3>Main Bowling Styles</h3>
+					
+					<p>
+						A conventional bowling form is the most commonly used method in ten-pin bowling. There are many styles that can be used in a conventional bowling form. 
+						However, all of the styles have the same objective in which their method is used to knock down all ten pins and achieve a strike.
+					</p>
+					
+					<div class = "gridcontainer">
+						<article>
+							<h4>Stroker</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>These are bowlers who release their bowling ball in a smooth manner. They typically have rev rates less than 300 Revolutions Per Minute (RPM).</p>
+							<p>
+								Strokers often keep their shoulders square to the foul line and their backswing generally does not go much above parallel to the ground, which reduces the ball's RPM when released, 
+								decreasing its hook potential and hitting power.
+							</p>
+							<p>
+								A typical approach utilises a traditional, controlled 4-step approach with a steady swing and low revolution rate. 
+								They rely on precision and straight lines with a gentle curve, keeping the ball closer to the outside of the lane.
+							</p>
+							
+							<h4>Key Mechanics:</h4>
+							<ul>
+								<li>Smooth Footwork: Using a classic, controlled 4-step approach, the steps should be even-paced, establishing a solid, balanced foundation at the foul line rather than relying on explosive speed.</li>
+								<li>Gravity-Fed Backswing: Avoid muscling the ball. Keep your arm relaxed, allowing the natural force of gravity to dictate your swing. Your backswing should typically reach no higher than parallel to the ground or about shoulder height</li>
+								<li>Ensure a Controlled Release. Keep your shoulders square to the foul line. Your thumb and fingers should exit the ball close to the same time. Use a very mild, 
+								subtle rotation (just 1 or 2 inches of finger action) from behind or the side of the ball to produce a modest axis tilt and a smooth, gentle hook.</li>
+								<li>Maintain a medium ball speed, typically launching between 22-29 km/h. Strokers generally stand to the right (right-handers) and play a "down-and-in" line, targeting near the second of third arrow on the lane, 
+								where the ball should roll straight down on the outside part of the lane before hooking smoothly into the pins.</li>
+							</ul>
+							
+							<h4>Recommended Bowling Balls:</h4>
+							<p>As they impart fewer revolutions and less axis rotation than crankers, they mostly use symmetrical core reactive balls with solid or hybrid coverstocks, which grip medium oil without overreacting.</p>
+						</article>
+						
+						<article>
+							<h4>Cranker</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>They are players who strive to generate revolutions using a cupped wrist or excessive wrist action, typically resulting in revolution rates over 400 RPM.</p>
+							<p>These players who rely on wrist action may have a high backswing and open their shoulders to generate ball speed.</p>
+							<p>They often cup the wrist, but open the wrist at the top of the swing.</p>
+							<p>Beginning the downswing, they tilt their wrist upward and let their elbow slightly bend to "cradle" the ball. This keeps the ball locked in their dominant hand and stores energy.</p>
+							<p>They then employ employ a higher backswing to generate momentum, using a relaxed shoulder to whip the ball forward</p>
+							<p>Crankers often delay their release slightly, allowing their sliding foot to finish and plant on the lane before the hand comes through the ball, which acts as a whip to generate higher revolutions.</p>
+							<p>
+								In short, this style emphasizes raw power and a high rev rate. 
+								The bowler utilizes a strong wrist snap and explosive release to make the ball sweep across the lane and hook violently into the pocket, maximizing pin action.
+							</p>
+							
+							<h4>How to perform the throw:</h4>
+							<ol>
+								<li>Start with your hand behind the ball during the forward swing.</li>
+								<li>As the ball reach the release zone at your ankle, forcefully unhinge your wrist.</li>
+								<li>Rotate your fingers quickly from inside to outside (about the 7 o'clock to the 4 o'clock position for right-handers) to impart maximum rotation and a sharp, angular hook.</li>
+							</ol>
+							
+							<h4>Recommended Bowling Balls:</h4>
+							<p>For this type of throw, it is recommended to use strong reactive resin or asymmetrical core bowling balls, as they are designed to flare and snap aggressively on the backend of the lane to match the high rev rate.</p>
+							
+						</article>
+						
+						<article>
+							<h4>Tweener</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>Players who play in this style delilve the ball in a manner that falls somewhere in between stroking and cranking, having revolution rates between 300 and 370 rpm.</p>
+							<p>This modified delivery uses a higher backswing than is normally employed by pure strokers or less powerful wrist position than pure crankers.</p>
+							<p>In short, Tweener is a "power stroker" that bridges the gap between strokers and crankers, which yields a higher rev rate than strokers but better control than crankers, allowing them to adapt to multiple lane conditions.</p>
+						
+							<h4>How to perform the throw:</h4>
+							<ol>
+								<li>Keep your shoulders relatively square to the foul line and your body relaxed, maintaing a steady 4-step approach, ensuring your timing is crisp and you slide to the line smoothly.</li>
+								<li>Bring the ball to a moderate height (about shoulder level). Avoid the overly high backswing of a "cranker," but use enough height to generate natural pendulum momentum.</li>
+								<li>At the bottom of the swing, cup your wrist slightly to store power, allowing your thumb to exit the ball first as the ball clears your sliding ankle, then uncup your fingers while actively rotating them from behind the ball (between the 4 and 6 o'clock positions) to create axis tilt and rotation.</li>
+								<li>For versatility across different conditions, play the middle part of the lane, usually targeting the area between the second and third arrows.</li>
+							</ol>
+							
+							<h4>Recommended Bowling Balls:</h4>
+							<p>As this style balances power and control, versatile reactive bowling balls with symmetrical or mild asymmetrical cores and pearl or hybrid coverstocks work best.</p>
+							
+						</article>
+						
+						<article>
+							<h4>Two-Handed Bowler</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>This is a modern, highly popular technique where the bowler places both hands on the ball without utilizing the thumb hole. This generates massive amounts of revolutions and power through hip rotation and an uninhibited backswing.</p>
+							<p>Players who utilise this technique is where their throwing hand is placed in bowling ball and the opposite hand is also placed on the ball during the shot.</p>
+							<p>
+								Traditionally, players insert two fingers into the ball, leaving the thumb out, with the dominant hand used to cradle the ball and create extra spins on release. 
+								The opposite hand is then used to guide the ball through the throwing motion, with the ball delivered shovel-style.
+							</p>
+							<p>These bowlers are forced to flex forward farther and rotate their hips more than a single handed bowler, placing more torque through the spin in order to increase the ball's speed and revolution rate.</p>
+							<p>If done correctly, this increased force, revolutions, and pin carry, with revolutions reaching up to 600 RPM.</p>							
+							<p>Do note that it should NOT be confused with the two-handed delivery, where players remove their supporting hand, effectively delivering the ball with only a single hand, prior to release.</p>							
+							<p>An actually delivery involves the use both hands simultaneously to give force to the ball</p>
+							
+							<h4>How to perform the throw:</h4>
+							<ol>
+								<li>Remove your thumb from the ball, use a fingertip grip with your middle and ring fingers, and rest your non-dominant hand on the front or side of the ball for support and control.</li>
+								<li>Hold the ball close to your waist at a 90-degree arm angle, keeping your knees slightly bent and shoulders relaxed.</li>
+								<li>Use a 4 - or 5-step approach, keeping your speed smooth and slow in the first few steps, then explode with power upon approaching the foul line, opening your hips naturally by pulling your dominant-side foot slightly back during your walk-up.</li>
+								<li>Push the ball forward smoothly as you reach your 2nd step, brining your elbow off your hip to create room for the swing.</li>
+								<li>As the ball goes into your backswing, ensure your legs and hips get out of the way so that your arm drops the ball into the space close to your body.</li>
+								<li>Keep your hand underneath and behind the ball as long as possible, releasing the ball near your ankle, letting your non-dominant hand peel away while uncoiling your torso through the shot, 
+								focusing on a forward rolling motion rather than forcing a spin with your upper body.</li>
+							</ol>
+							
+							<h4>Recommended Bowling Balls:</h4>
+							<p>This style of bowling required agressive, asymmetrical cores for angularity and strong solid or hybrid reactive coverstocks to handle the high rev rates. 
+							The most popular types for this type of throw are Reactive Resin (asymmetrical cores) for heavy hook and pin carry, Urethane for control on dry lanes, and Polyester (Plastic) for shooting spares.</p>
+							
+						</article>
+						
+						<article>
+							<h4>Spinner</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>This is a style frequently seen in Asian countries like Taiwan and Japan, where the lanes are usually oiled from the foul line to the pin rack. 
+							The bowler imparts an upright, horizontal (helicopter-like) spin on the ball rather than a standard forward-and-side roll</p>
+							<p>Players who use this style release ball such that it rotates around the vertical axis in a counter clockwise motion as it moves down the lane (when done by a right-hander and is viewed from above).</p>
+							<p>They usually generate around 90 degrees of axis tilt and virtually no side rotation.</p>
+							<p>A hook needs friction, in order to allow the ball to have a grip on the lane. This is not the case in spinning, where very little of the ball's surface touches the lane, 
+							which is intended, as they do not require any kind of friction.</p>
+							<p>In this case, the objective depends on pin deflection. For right-handers, the bowler delivers the ball the lane, usually a left-to-right line. 
+							The ball first strikes the front pin, then move down the front row of pins in the direction opposite to its spin, which is the right side in this case (referred to as "riding the rail").
+							</p>
+							
+							<h4>How to perform the throw:</h4>
+							<ol>
+								<li>Maintain your standard 4 or 5-step approach, keeping your footwork slow and steady, making sure your shoulders stay level.</li>
+								<li>Do not drop your shoulder, bend your elbow, or cup your wrist during the swing.</li>
+								<li>Keep your hand behind the ball. As you reach the foul line, ensure your entire hand is directly behind the ball with absolutely no wrist hinge.</li>
+								<li>Unlike hook bowling, you must release your thumb and fingers at almost the exact same time.</li>
+								<li>Impart a high-axis tilt as you let go, aiming to rotate the ball with your forearm/wrist so it spins sideways in the air, entering the pins almost like a spinning top.</li>
+							</ol>
+							
+							<h4>Recommended Bowling Balls & Recommendations:</h4>
+							<p>As this style depends on deflecting off the pins rather than driving through the pocket, it would be better to use a lighter ball, of about 10-13 lbs, or 4.5 - 5.9 kg.</p>
+							<p>In addition, avoid fingertip grips, and instead, use a semi-conventional or conventional grip without custom inserts, as everything must exit the ball at the exact same time.</p>
+						</article>
+						
+						<article>
+							<h4>Straight Bowler</h4>
+						</article>
+						
+						<article>
+							<h4>Description:</h4>
+							<p>Primarily used by casual or beginner bowlers. The ball is rolled perfectly straight down the lane directly into the headpin, relying solely on accuracy rather than hook potential.</p>
+							<p>Throwing a straight bowling ball requires a steady wrist, a straight arm swing, and precise footwork.</p>
+							<p>Bowlers using this style generally lock their wrist straight to prevent the ball from curving, followed by keeping their fingers directly behind the ball and their arm close to their body</p>
+							<p>Finally, they aim for the target arrows on the lane instead of looking at the pins.</p>
+						
+							<h4>How to perform the throw:</h4>
+							<ol>
+								<li>Stand with your feet shoulder-width apart, with your dominant foot slightly behind the other. Note: For right-handed bowlers, place your right foot on the 15th board (roughlly in the center)</li>
+								<li>Do not look directly at the pins, focusing on the second arrow (the 10th board) from the right, and aligning your hips and shoulders toward this mark.</li>
+								<li>Push the ball forward in a straight line on your first step. Avoid pushing it to the right, which can cause the ball to drift.</li>
+								<li>Allow your arm to swing backward naturally like a pendulum, keeping your elbow in and avoiding bending it.</li>
+								<li>As your arm comes down past your sliding foot, release the thumb first, followed smoothly by your fingers.</li>
+								<li>Keep your wrist firm. To prevent hooking, maintain a "handshake" position without twisting or rotating your wrist, with your thumb pointing toward the ceiling (12 o'clock) upon release.</li>
+								<li>Let your arm swing naturally upward towards your shoulder, keeping your eyes locked on your target the entire time.</li>
+							</ol>
+							
+							<h4>Recommended Bowling Balls:</h4>
+							<p>The primary focus for this style of straight-line trajectory is on the coverstock and core combination.</p>
+							<p>The most common ball for this throw is Plastic (Polyester) as they create the least friction and go virtually dead-straight, excellent for beginners, for picking up spares, and for dry lane conditions.</p>
+							<p>Urethane balls are also acceptable, as they offer smoother, slightly more predictable rool and improved pin carry, highly durable and great for casual bowlers who want to learn how to control their shot's direction without massive hook potential.</p>
+						</article>
+					</div>
+				</article>
+			</section>
+			
+			<section class = "page" id = "page4">
+				<h2>Trivia, Quiz & Mini-Game</h2>
+				
+				<article>
+					<h3>Did you know the following facts about bowling?</h3>
+					
+					<h4>Historical Origins & Legal Issues</h4>
+					<ul>
+						<li>Bowling has existed as far as the Ancient TImes. This is proved by promitive bowling sets in Egyptian gaves found by Archaeologists dating back to 3200 BC.</li>
+						<li>Is was once banned by Royalty. An example of this is when it was banned it in the 1300s by King Edward III, who wanted to keep soldiers focused on archery.</li>
+						<li>Connecticut banned nine-pin bowling in 1841 because of heavy gambling. As such, players added a tenth pin to bypass the law, inventing modern ten-pin bowling that is known today.</li>
+						<li>The first first indoor lanes were opened in New York City in 1840 in Knickerbocker Alleys.</li>
+					</ul>
+					
+					<h4>Anatomy of a Bowling Lane & Gear</h4>
+					<ul>
+						<li>A lane measures exactly 60 feet from the foul line to the headpin.</li>
+						<li>Every standard bowling lane consists of exactly 39 wooden or synthetic boards.</li>
+						<li>Standard ten-pin bowling pins stand exactly 15 inches tall.</li>
+						<li>The heaviest legal bowling ball allowed in professional play is 16 pounds, or 7.25 kg.</li>
+						<li>A single bowling ball is legally allowed to have up to 12 holes.</li>
+						<li>Before 1906, bowling balls were made of a heavy hardwood called Lignum Vitae.</li>
+					</ul>
+					
+					<h4>Quirky Terms & Scoring Anomalies</h4>
+					<ul>
+						<li>Three consecutive strikes in a row is called a "turkey".</li>
+						<li>Stringing together nine consecutive strikes earns the name "Golden Turkey".</li>
+						<li>A Brooklyn Strike is where the ball hits the opposite side of the pocket but still leads to a strike (e.g., left side for a right-handed bowler).</li>
+						<li>The rarest score statistically achieved the fewest times in history is 292.</li>
+						<li>On the contrast, a score of 77 is the most probable score, having the highest number of mathematical frame combinations.</li>
+						<li>Splits can be convered despite difficulty. However, the 7-10 Split is statistically the most difficult split to convert in the entire game.</li>
+					</ul>
+					
+					<h4>Record Breakers & Pop Culture</h4>
+					<ul>
+						<li>Mechanical pinsetters didn't exist until AMF introduced the automatic pinspotter in 1936, meaning that human intervention is needed for reseting the pins.</li>
+						<li>The world’s largest bowling alley is the Inazawa Grand Bowling Centre in Japan, housing 116 lanes.</li>
+						<li>Stephen Shanabrook bowled for 134 hours and 57 minutes straight, completing 643 games.</li>
+						<li>In popular culture, the cult-classic film The Big Lebowski features bowling as a central theme for protagonist Jeffrey Lebowski.</li>
+					</ul>
+				</article>
+				
+				<article>
+					<h3>Quiz</h3>
+					<div id = "quiz-box"></div>
+					<button id="btnSubmit">Submit Quiz</button>
+					<p id="scorebox">Not submitted</p>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<p>Created by Lee Zhi Heng (Li Zhiheng) 李志恒</p>
+			<p>Copyright 2026</p>
+		</footer>
+	</body>
+</html>

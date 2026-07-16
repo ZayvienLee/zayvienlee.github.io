@@ -1,0 +1,183 @@
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Oswald'), url('fonts/oswald.woff') format('woff');
+} /* Source: https://fontsource.org/fonts/oswald */
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto'), url('fonts/roboto.woff') format('woff');
+} /* Source: https://fontsource.org/fonts/roboto */
+
+/* This Assigns the Roboto font to all elements */
+* {
+	font-family: 'Roboto', arial;
+}
+
+/* This Assigns the Oswald font to the header elements ONLY, which OVERRIDES the above font assignation */
+h1, h2, h3, h4 {
+	font-family: 'Oswald', arial;
+	color: #F8FAFC; /* Crisp Cream */
+}
+
+body 
+{
+	background-color: #121824; /* Charcoal*/
+}
+
+section
+{
+	background-color: #0F172A; /* Dark Sapphire Blue */
+	border: 3px solid #DC2626; /* Striking Crimson Red */
+	padding: 0.5em;
+	padding-bottom: 1.25em;
+}
+
+article
+{
+	border: 3px solid #F59E0B; /* Classic Wooden Amber */
+	margin: 0.5em;
+	padding: 0.5em;
+	padding-bottom: 1.25em;
+	background-color: #150549;
+}
+
+article div article
+{
+	border: 3px solid #077a60; /* Emerald Green */
+}
+
+
+p, figcaption, ul, li, legend, input, label
+{
+	color: #bac9de; /* Muted, Light Silver-Gray */
+}
+
+fieldset
+{
+	padding: 0.5em;
+	margin: 0.5em;
+	border: 3px solid #DC2626; /* Striking Crimson Red */
+}
+
+legend
+{
+	border: 3px solid #077a60; /* Emerald Green */
+	background-color: #121824; /* Charcoal*/
+}
+
+h1, h2, h3, h4 {margin: 0.5em;}
+
+h1 {margin-left: 0.25em; font-size: 3em;}
+h2 {margin-left: 0.5em; font-size: 2.5em;}
+h3 {margin-left: 0.75em; font-size: 2em;}
+h4 {margin-left: 1em; font-size: 1.5em;}
+p {margin-left: 2.15em; font-size: 1em;}
+ul, li {font-size: 1em; margin-top: 0.3em; margin-bottom: 0.3em;}
+
+footer p {text-align: center;}
+
+/* This defines the style of the pages */
+.page {display:flex;}
+nav ul li {display: inline;}
+
+button {
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+	padding: 0.75em;
+}
+
+nav.cls_mainnav ul {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+/*CSS for responsive menu*/
+#hamIcon {
+	display: none;
+	padding: 2em;
+	border: none;
+	background: black;
+}
+
+.gridcontainer
+{
+	display: grid;
+	width: 100%;
+	height: 100%;
+	gap: 1.25em;
+	grid-template-rows: auto;
+}
+
+button
+{
+	background-color: #00d8d8; /* Vibrant teal */
+	border: 2px solid #009ecf;
+	transition: all 0.25s;
+}
+
+button:hover
+{
+	background-color: #7DF9FF; /* Electric Blue */
+}
+
+button:active
+{
+	color: white;
+	background-color: #00b8b8; /* Darker Shade of Blue */
+}
+
+/* This is for the the web which is smaller than 800px in size */
+@media (max-width:800px)
+{
+	/*make a menu items vertical*/
+	nav ul li {display:block;}
+	/* unhide menu icon */
+	#hamIcon{display:block;} 
+	/*hide the menu item list*/
+	nav ul {display:none;}
+	
+	/* The styles to give the menu if the web is in the small width version */
+	.menuShow li {
+		list-style-type: none;
+		padding-left: 0;
+		margin-left: 0;
+		display: flex;
+	}
+
+	.menuShow li button {flex: 1;}
+	
+	/* to unhide menu items */
+	.menuShow {
+		display: grid;
+	}
+	
+	.gridcontainer
+	{
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media (min-width:801px)
+{
+	nav.cls_mainnav ul {
+		display: flex;
+		gap: 20px;
+	}
+	
+	nav.cls_mainnav ul li {
+		display: flex;
+		flex: 1;
+	}
+	
+	nav ul li button {flex: 1;}
+	
+	.gridcontainer
+	{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+}
