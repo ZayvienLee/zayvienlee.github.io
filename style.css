@@ -78,7 +78,7 @@ h4 {margin-left: 1em; font-size: 1.5em;}
 p {margin-left: 2.15em; font-size: 1em;}
 ul, li {font-size: 1em; margin-top: 0.3em; margin-bottom: 0.3em;}
 
-footer p {text-align: center;}
+footer {text-align: center;}
 
 /* This defines the style of the pages */
 .page {display:flex;}
@@ -159,6 +159,9 @@ button:active
 	{
 		grid-template-columns: repeat(1, 1fr);
 	}
+	
+	#qrCodeImg{display:none;} /*hide QR code */
+	h1::after{content:" (mobile)";}/*append text 'mobile’ */
 }
 
 @media (min-width:801px)

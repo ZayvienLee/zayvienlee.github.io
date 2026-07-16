@@ -23,7 +23,50 @@ const scorebox=document.querySelector("#scorebox");
 const quizBox = document.getElementById("quiz-box");
 var score=0;
 
+// Code to toggle the fullscreen on Desktop
+const btnFS=document.querySelector("#btnFS");
+const btnWS=document.querySelector("#btnWS");
+btnFS.addEventListener("click",enterFullscreen);
+btnWS.addEventListener("click",exitFullscreen);
 
+// The following code below to allow compatibility for all browsers on the webpage
+function enterFullscreen() { //must be called by user generated event
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { // Firefox
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { // IE/Edge
+    document.msExitFullscreen();
+  }
+}
+
+// Used for reporting the window size
+const heightOutput = document.querySelector("#height");
+const widthOutput = document.querySelector("#width");
+
+function reportWindowSize() {
+	heightOutput.textContent = window.innerHeight;
+	widthOutput.textContent = window.innerWidth;
+}
+reportWindowSize();
+
+window.addEventListener("resize",reportWindowSize);//when resize, update report
+
+// The code to toggle the menu
 function toggleMenus()
 { 
 	/*open and close menu*/

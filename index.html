@@ -3,16 +3,22 @@
 <html lang = "en">
 	<head lang = "en">
 		<meta charset= "UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Title of Website Here</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+		<!-- get icons from https://www.favicon.cc --> 
+		<title>Bowling</title>
 		<link href="style.css" type="text/css" rel="stylesheet">
 		<script src = "main.js" defer></script>
 	</head>
 	
 	<body>
 		<header>
-			<h1>Main Topic</h1>
+			<h1>Bowling</h1>
 		</header>
+		<button id="btnFS">FullScreen</button>
+		<button id="btnWS">Exit Full Screen</button>
 		<nav class = "cls_mainnav"> <!--menu system-->
 			<button id = "hamIcon"></button>
 			<ul>
@@ -83,14 +89,14 @@
 						<article>
 							<h4>Description</h4>
 							<ul>
-								<li>Best for:</li>
+								<li>Best for:
 									<ul>
 										<li>Beginners</li>
 										<li>Straight Shots</li>
 										<li>Spare Shooting</li>
 									</ul>
-								<li>
-									Features:
+								</li>
+								<li>Features:
 									<ul>
 										<li>Very hard, smooth surface with a low friction coefficient</li>
 										<li>They roll straight and resist hooking; ideal for hitting corner pins (e.g. 7-pin or 10-pin)</li>
@@ -138,12 +144,13 @@
 								</li>
 								<li>Features:
 									<ul>
-										<li>Made from advanced resin compounds, these balls absorb lane oil to create aggressive friction, resulting in a dramatic, sharp "hook" into the pocket. They come in three variations</li>
-										<ul>
-											<li>Solid: Reads the lane earlier for a smooth, even hook.</li>
-											<li>Pearl: Skids further down the lane before snapping sharply at the pins.</li>
-											<li>Hybrid: Combines both solid and pearl materials for a versatile mid-lane and backend reaction.</li>
-										</ul>
+										<li>Made from advanced resin compounds, these balls absorb lane oil to create aggressive friction, resulting in a dramatic, sharp "hook" into the pocket. They come in three variations.
+											<ul>
+												<li>Solid: Reads the lane earlier for a smooth, even hook.</li>
+												<li>Pearl: Skids further down the lane before snapping sharply at the pins.</li>
+												<li>Hybrid: Combines both solid and pearl materials for a versatile mid-lane and backend reaction.</li>
+											</ul>
+										</li>
 									</ul>
 								</li>
 							</ul>
@@ -506,6 +513,11 @@
 		<footer>
 			<p>Created by Lee Zhi Heng (Li Zhiheng) 李志恒</p>
 			<p>Copyright 2026</p>
+			<p>Window inner width: <span id="width"></span></p>
+			<p>Window inner height: <span id="height"></span></p>
+			
+			<p>Scan the QR Code below to view the website on your mobile device:</p>
+			<img id = "qrCodeImg" src = "images/qrcode.png" title = "Scan this code with your mobile device" alt = "The QR Code to display the website on mobile devices">
 		</footer>
 	</body>
 </html>
