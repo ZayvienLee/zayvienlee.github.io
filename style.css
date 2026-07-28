@@ -28,12 +28,22 @@ body
 	background-color: #121824; /* Charcoal*/
 }
 
+header, footer, nav {
+	background-color: #0F172A; /* Dark Sapphire Blue */
+	border: 3px solid #0236F2; /* Sport Blue */
+	margin: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	text-align: center;
+}
+
 section
 {
 	background-color: #0F172A; /* Dark Sapphire Blue */
 	border: 3px solid #DC2626; /* Striking Crimson Red */
 	padding: 0.5em;
 	padding-bottom: 1.25em;
+	margin: 0.5em;
 }
 
 article
@@ -51,9 +61,14 @@ article div article
 }
 
 
-p, figcaption, ul, li, legend, input, label
+p, figcaption, ul, li, legend, input, label, details, div, img
 {
 	color: #bac9de; /* Muted, Light Silver-Gray */
+}
+
+a
+{
+	color: #dae4f2; /* Light Gray */
 }
 
 fieldset
@@ -75,13 +90,17 @@ h1 {margin-left: 0.25em; font-size: 3em;}
 h2 {margin-left: 0.5em; font-size: 2.5em;}
 h3 {margin-left: 0.75em; font-size: 2em;}
 h4 {margin-left: 1em; font-size: 1.5em;}
-p {margin-left: 2.15em; font-size: 1em;}
-ul, li {font-size: 1em; margin-top: 0.3em; margin-bottom: 0.3em;}
+p, summary, .leftmargin {margin-left: 2.15em; font-size: 1em;}
+ul, ol, li {font-size: 1em; margin-top: 0.3em; margin-bottom: 0.3em;}
+figcaption {font-size: 0.8em;}
 
-footer {text-align: center;}
+footer p {margin-left: 0em;}
+
+.removemargin {margin: 0;}
 
 /* This defines the style of the pages */
 .page {display:flex;}
+
 nav ul li {display: inline;}
 
 button {
@@ -93,6 +112,82 @@ button {
 nav.cls_mainnav ul {
 	padding-left: 0;
 	margin-left: 0;
+}
+
+img.center-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img {
+	border: 3px solid #ff22df; /* Bright Pink */
+	max-height: 250px;
+	max-width: 90%;
+	width: auto;
+	height: auto;
+}
+
+button
+{
+	background-color: #00d8d8; /* Vibrant teal */
+	border: 2px solid #009ecf;
+	transition: all 0.25s;
+}
+
+button:hover
+{
+	background-color: #7DF9FF; /* Electric Blue */
+}
+
+button:active
+{
+	color: white;
+	background-color: #00b8b8; /* Darker Shade of Blue */
+}
+
+#qrCodeArea {text-align: center;}
+#qrCodeImg {width: 200px;}
+
+.sliderRPM {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.sliderRPM input {
+	box-sizing: border-box;
+	width: 80%;
+}
+
+figure
+{
+	margin: 0;
+	width: auto;
+	height: auto;
+}
+
+.aligncenter
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aligntextcenter
+{
+	text-align: center;
+}
+
+.aligntextleft
+{
+	text-align: left;
+}
+
+#RollingBowlingBall {
+	border: none;
+	max-height: 150px;
+	height: auto;
+	width: auto;
 }
 
 /*CSS for responsive menu*/
@@ -112,22 +207,166 @@ nav.cls_mainnav ul {
 	grid-template-rows: auto;
 }
 
-button
-{
-	background-color: #00d8d8; /* Vibrant teal */
-	border: 2px solid #009ecf;
+/* CSS for the sprites of the frames, setting the dimensions and image reference */
+
+/* Container to show the sprite */
+.frame {
+	border: 2px solid red;
+	display: inline-block;
+	width: 100%;
+	max-width: 266.66666px;
+	aspect-ratio: 266.66666 / 150; /* Preserves the aspect ratio to ensure that the sprites do not distort */
+	background-size: 600% 400%; /* There are a total of six columns and four rows */
+	background-image: url('images/BowlingForms/BowlingStyleForms.jpg');
+}
+
+/* The following below are defined for the frames for each relevant style */
+.frameStroker1 {background-position: 0% 0%;}
+.frameStroker2 {background-position: 0% 33.3333%;}
+.frameStroker3 {background-position: 0% 66.6667%;}
+.frameStroker4 {background-position: 0% 100%;}
+.frameTweener1 {background-position: 20% 0%;}
+.frameTweener2 {background-position: 20% 33.3333%;}
+.frameTweener3 {background-position: 20% 66.6667%;}
+.frameTweener4 {background-position: 20% 100%;}
+.frameCranker1 {background-position: 40% 0%;}
+.frameCranker2 {background-position: 40% 33.3333%;}
+.frameCranker3 {background-position: 40% 66.6667%;}
+.frameCranker4 {background-position: 40% 100%;}
+.frameTwoHanded1 {background-position: 60% 0%;}
+.frameTwoHanded2 {background-position: 60% 33.3333%;}
+.frameTwoHanded3 {background-position: 60% 66.6667%;}
+.frameTwoHanded4 {background-position: 60% 100%;}
+.frameSpinner1 {background-position: 80% 0%;}
+.frameSpinner2 {background-position: 80% 33.3333%;}
+.frameSpinner3 {background-position: 80% 66.6667%;}
+.frameSpinner4 {background-position: 80% 100%;}
+.frameStraight1 {background-position: 100% 0%;}
+.frameStraight2 {background-position: 100% 33.3333%;}
+.frameStraight3 {background-position: 100% 66.6667%;}
+.frameStraight4 {background-position: 100% 100%;}
+
+
+/* The following lines of code to define for the mini-game */
+#gamearea {
+	border: 2px solid #00d8d8; /* Vibrant teal */
+	background-color: white;
+	width: 100%;
+	max-width: 300px;
+	height: 650px;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#gameball {
+	height: 60px;
+	border: none;
+	position: relative;
+}
+
+#triggerzone {
+	top: 135px;
+	position: relative;
+	max-width: 100px;
+	width: 55%;
+	height: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sliderarea {
+	border: 2px solid #00d8d8; /* Vibrant teal */
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 300px;
+}
+
+/* Base input for the slider */
+input[type="range"]#sliderAngle {
+	appearance: none;
+	background-image: linear-gradient(to right, red, green, red);
+	border-radius: 10px;
+	outline: none;
+	height: 50px;
+}
+
+/* The thumb styling (Showing the oscillating icon) */
+/* input[type="range"]#sliderAngle::-webkit-slider-thumb { /* This is for Chrome, Safari, Edge, and Opera */
+	/* -webkit-appearance: none; /* This resets the native thumb styles */
+	/* height: 50px; */
+	/* width: 10px; */
+	/* background-color: #00d8d8; /* Vibrant teal */
+/* } */
+
+/* input[type="range"]#sliderAngle::-moz-range-thumb { /* The styling for Firefox */
+	/* border: none; /* Removes the default FireFox border */
+	/* height: 50px; */
+	/* width: 10px; */
+	/* background-color: #00d8d8; /* Vibrant teal */
+/* } */
+
+.bowlingpins-formation {
+	position: relative;
+	margin: 0 auto;
+}
+
+.bowlingpin {
+	position: absolute;
+	max-height: 80px;
+	border: none;
 	transition: all 0.25s;
 }
 
-button:hover
-{
-	background-color: #7DF9FF; /* Electric Blue */
+.pin-1 {top: 85px; left: 45.5%;}
+.pin-2 {top: 60px; left: 39%;}
+.pin-3 {top: 60px; left: 53%;}
+.pin-4 {top: 35px; left: 32%;}
+.pin-5 {top: 35px; left: 45.5%;}
+.pin-6 {top: 35px; left: 60%;}
+.pin-7 {top: 10px; left: 25%;}
+.pin-8 {top: 10px; left: 39%;}
+.pin-9 {top: 10px; left: 53%;}
+.pin-10 {top: 10px; left: 67%;}
+
+/* When the pins fall, play this animation*/
+@keyframes pinAction {
+	0% {
+		transform: rotate(45deg);
+	}
+	
+	50% {
+		transform: rotate(75deg);
+	}
+	
+	100% {
+		rotation: rotate(90deg);
+	}
 }
 
-button:active
-{
-	color: white;
-	background-color: #00b8b8; /* Darker Shade of Blue */
+.knockPins {
+	animation: pinAction 0.5s;
+}
+
+/* This is to display the buttons if the screen is fullscreen or not */
+#btnFS {
+	display: block;
+}
+
+#btnWS {
+	display: none;
+}
+
+:fullscreen #btnFS {
+	display: none;
+}
+
+:fullscreen #btnWS {
+	display: block;
 }
 
 /* This is for the the web which is smaller than 800px in size */
@@ -160,7 +399,7 @@ button:active
 		grid-template-columns: repeat(1, 1fr);
 	}
 	
-	#qrCodeImg{display:none;} /*hide QR code */
+	#qrCodeArea{display:none;} /*hide QR code and the text */
 	h1::after{content:" (mobile)";}/*append text 'mobile’ */
 }
 
@@ -182,5 +421,4 @@ button:active
 	{
 		grid-template-columns: repeat(2, 1fr);
 	}
-
 }
