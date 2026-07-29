@@ -2,7 +2,7 @@
 	"name": "Bowling Website",
 	"short_name": "Bowling",
 	"description": "Learn the sport of bowling with this website. Assignment for Web Development.",
-	"start_url": "./webdevA2/index.html",
+	"start_url": "/webdevA2/index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
 	"theme_color": "#59eeff",
