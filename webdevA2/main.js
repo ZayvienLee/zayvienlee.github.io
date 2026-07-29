@@ -54,18 +54,6 @@ function exitFullscreen() {
   }
 }
 
-// Used for reporting the window size
-const heightOutput = document.querySelector("#height");
-const widthOutput = document.querySelector("#width");
-
-function reportWindowSize() {
-	heightOutput.textContent = window.innerHeight;
-	widthOutput.textContent = window.innerWidth;
-}
-reportWindowSize();
-
-window.addEventListener("resize",reportWindowSize);//when resize, update report
-
 // The code to toggle the menu
 function toggleMenus()
 { 
@@ -103,7 +91,7 @@ page4btn.addEventListener("click", function () {
 });
 hideall();
 
-show(4); // For this case, the main page will be shown by default
+show(1); // For this case, the main page will be shown by default
 
 // This is needed to set the questions for the quiz
 const quizData =

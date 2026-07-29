@@ -3,22 +3,22 @@
 <html lang = "en">
 	<head lang = "en">
 		<meta charset= "UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
-		<!-- get icons from https://www.favicon.cc --> 
+		<link rel="icon" type="image/png" href="images/Icon/Icon.png">
 		<title>Bowling</title>
 		<link href="style.css" type="text/css" rel="stylesheet">
 		<script src = "main.js" defer></script>
+		<link rel = "manifest" href = "/manifest.json">
 	</head>
 	
 	<body>
 		<header>
-			<h1>Bowling</h1>
+			<h1><img src = "images/Icon/Icon.png" id = "icon" alt = "Website Logo">Bowling</h1>
 		</header>
 		<nav class = "cls_mainnav"> <!--menu system-->
-			<button id = "hamIcon"></button>
+			<button id = "hamIcon"><img src = "images/HamburgerIcon.jpg" alt = "Hamburger Menu Icon"></button>
 			<ul>
 				<li><button id = "page1btn">Home</button></li>
 				<li><button id = "page2btn">Types of Bowling Balls & Lanes</button></li>
@@ -28,7 +28,7 @@
 		</nav>
 		<main>
 			<section class = "page" id = "page1">
-				<h2>What is Bowling All About?</h2>
+				<h2>Home (What is Bowling All About?)</h2>
 				<p>Bowling is a recreational and competitive sport where players roll a heave ball down a wooden 
 				or synthetic land to knock down 10 pins arranged in a triangle. A standard game consists of 10 frames, 
 				with players receiving a maximum of two rolls per frame to clear all the pins.
@@ -49,27 +49,27 @@
 				</figure>
 				
 				<ul>
-					<li>Pinfall: Each pin knocked down is worth 1 point.</li>
-					<li>Strike ("X"): Knocking down all 10 pins on the first roll awards 10 points plus the total pinfall from the next two rolls.</li>
-					<li>Spare ("/"): Knocking down the remaining pins on the second roll awards 10 points plus the pinfall from the next roll.</li>
-					<li>The 10th Frame: If a player rolls a strike or spare in the 10th frame, they are awarded extra bonus rolls to finalise their score.</li>
-					<li>Foul: Players should release the ball and stop before the foul line on their approach. Should they step over the foul line, they will be awarded a zero for their roll.</li>
-					<li>Split: Occurs when the headpin is knocked down on the first throw, but two or more non-adjacent pins remain standing with a noticeable gap between them, leaving a difficult spare attempt where striking these pins is highly challenging.</li>
+					<li><span>Pinfall:</span> Each pin knocked down is worth 1 point.</li>
+					<li><span>Strike ("X"):</span> Knocking down all 10 pins on the first roll awards 10 points plus the total pinfall from the next two rolls.</li>
+					<li><span>Spare ("/"):</span> Knocking down the remaining pins on the second roll awards 10 points plus the pinfall from the next roll.</li>
+					<li><span>The 10th Frame:</span> If a player rolls a strike or spare in the 10th frame, they are awarded extra bonus rolls to finalise their score.</li>
+					<li><span>Foul:</span> Players should release the ball and stop before the foul line on their approach. Should they step over the foul line, they will be awarded a zero for their roll.</li>
+					<li><span>Split:</span> Occurs when the headpin is knocked down on the first throw, but two or more non-adjacent pins remain standing with a noticeable gap between them, leaving a difficult spare attempt where striking these pins is highly challenging.</li>
 				</ul>
 				
 				<h3>Equipment and Setup</h3>
 				<ul>
 					<li>
-						The Lane: A standard bowling lane is 60 feet long and made of polished wood or synthetic material.
+						<span>The Lane:</span> A standard bowling lane is 60 feet long and made of polished wood or synthetic material.
 						It is lightly coated with lubricating oil in specific patterns that affect the ball's movement.
 					</li>
 					<li>
-						The Ball: Typically weighing between 6 and 16 pounds, or 2.7 and 7.3 kg, standard balls feature drilled holes for a secure grip.
+						<span>The Ball:</span> Typically weighing between 6 and 16 pounds, or 2.7 and 7.3 kg, standard balls feature drilled holes for a secure grip.
 						The thumb, middle finger, and ring finger are to be placed into these holes when bowling.
 						They all weight in different pounds (lbs), and they must be 10% of the bowler's weight.
 					</li>
 					<li>
-						Shoes: Players wear specialized bowling shoes with sliding soles on one foot to control their momentum before release, and a rubber sole on the other for braking.
+						<span>Shoes:</span> Players wear specialized bowling shoes with sliding soles on one foot to control their momentum before release, and a rubber sole on the other for braking.
 					</li>
 				</ul>
 			</section>
@@ -108,14 +108,16 @@
 						<article>
 							<h4>Description</h4>
 							<ul>
-								<li>Best for:
+								<li>
+									<span>Best for:</span>
 									<ul>
 										<li>Beginners</li>
 										<li>Straight Shots</li>
 										<li>Spare Shooting</li>
 									</ul>
 								</li>
-								<li>Features:
+								<li>
+									<span>Features:</span>
 									<ul>
 										<li>Very hard, smooth surface with a low friction coefficient</li>
 										<li>They roll straight and resist hooking; ideal for hitting corner pins (e.g. 7-pin or 10-pin)</li>
@@ -137,7 +139,8 @@
 						<article>
 							<h4>Description</h4>
 							<ul>
-								<li>Best for:
+								<li>
+									<span>Best for:</span>
 									<ul>
 										<li>Amateur Bowlers</li>
 										<li>Medium-dry Lanes</li>
@@ -145,7 +148,7 @@
 									</ul>
 								</li>
 								<li>
-									Features:
+									<span>Features:</span>
 									<ul>
 										<li>Urethane provides more friction than plastic, resulting in a smooth, continuous arcing motion.</li>
 										<li>Offer excellent control and are highly favored by players needing a predictable reaction when reactive balls hook too wildly.</li>
@@ -168,12 +171,14 @@
 						<article>
 							<h4>Description</h4>
 							<ul>
-								<li>Best for:
+								<li>
+									<span>Best for:</span>
 									<ul>
 										<li>Advanced and competitive bowlers playing on various oil patterns.</li>
 									</ul>
 								</li>
-								<li>Features:
+								<li>
+									<span>Features:</span>
 									<ul>
 										<li>Made from advanced resin compounds, these balls absorb lane oil to create aggressive friction, resulting in a dramatic, sharp "hook" into the pocket. They come in three variations.
 											<ul>
@@ -202,12 +207,14 @@
 						<article>
 							<h4>Description</h4>
 							<ul>
-								<li>Best for:
+								<li>
+									<span>Best for:</span>
 									<ul>
 										<li>Heavy oil lane conditions</li>
 									</ul>
 								</li>
-								<li>Features:
+								<li>
+									<span>Features:</span>
 									<ul>
 										<li>Features microscopic textured particles, like glass, ceramic, or carbon, embedded in the resin coverstock.</li>
 										<li>Cut right through heavy oil and create immense friction</li>
@@ -235,22 +242,25 @@
 							<h4>Description</h4>
 							<p>Bowling ball core types include pancake, symmetrical, and asymmetrical desings, which dictate how a ball rolls, hooks, and flares on the lane.</p>
 							
-							<ul>Pancake Cores:
-								<li>Shape: Flat, circular disk embedded near the top of the ball.</li>
-								<li>Motion: Minimal flare with a very straight, predictable path.</li>
-								<li>Use Case: Found mostly in polyester or plastic spare balls.</li>
+							<ul>
+								Pancake Cores:
+								<li><span>Shape:</span> Flat, circular disk embedded near the top of the ball.</li>
+								<li><span>Motion:</span> Minimal flare with a very straight, predictable path.</li>
+								<li><span>Use Case:</span> Found mostly in polyester or plastic spare balls.</li>
 							</ul>
 							
-							<ul>Symmetrical Cores
-								<li>Shape: Evenly balanced weight distribution around the center (like a lightbulb or oval).</li>
-								<li>Motion: Smooth, predictable, and controllable arcing motion.</li>
-								<li>Use Case: Best for beginners, league bowlers, and dry-to-medium lane conditions.</li>
+							<ul>
+								Symmetrical Cores:
+								<li><span>Shape:</span> Evenly balanced weight distribution around the center (like a lightbulb or oval).</li>
+								<li><span>Motion:</span> Smooth, predictable, and controllable arcing motion.</li>
+								<li><span>Use Case:</span> Best for beginners, league bowlers, and dry-to-medium lane conditions.</li>
 							</ul>
 							
-							<ul>Asymmetrical Cores:
-								<li>Shape: Uneven weight distribution with a distinct mass bias or Preferential Spin Axis (PSA) marker.</li>
-								<li>Motion: Stronger, sharper, and more angular backend reaction with high flare potential.</li>
-								<li>Use Case: Best for advanced players, high rev rates, and heavy oil patterns.</li>
+							<ul>
+								Asymmetrical Cores:
+								<li><span>Shape:</span> Uneven weight distribution with a distinct mass bias or Preferential Spin Axis (PSA) marker.</li>
+								<li><span>Motion:</span> Stronger, sharper, and more angular backend reaction with high flare potential.</li>
+								<li><span>Use Case:</span> Best for advanced players, high rev rates, and heavy oil patterns.</li>
 							</ul>
 						</article>
 					</div>
@@ -265,17 +275,17 @@
 						A standard bowling lane is 60 feet long from the foul line to the headpin and is divided into three main zones. To protect the wood or synthetic surface, lanes are coated with a silicone-based oil.
 					</p>
 					
-					<p>Overview of the Lane:</p>
+					<p><span>Overview of the Lane:</span></p>
 					<ul>
-						<li>The Front End: The first 15–20 feet where the lane machine applies a heavy volume of oil. Balls will skid here.</li>
-						<li>The Mid-Lane: The middle of the lane where the oil transitions. This is where the ball begins to build rotational force.</li>
-						<li>The Backend: The final 20 feet leading to the pins, which typically has no applied oil. When a ball exits the oily section and hits this dry friction, it hooks.</li>
+						<li><span>The Front End:</span> The first 15–20 feet where the lane machine applies a heavy volume of oil. Balls will skid here.</li>
+						<li><span>The Mid-Lane:</span> The middle of the lane where the oil transitions. This is where the ball begins to build rotational force.</li>
+						<li><span>The Backend:</span> The final 20 feet leading to the pins, which typically has no applied oil. When a ball exits the oily section and hits this dry friction, it hooks.</li>
 					</ul>
 					
-					<p>Common Lane Patterns:</p>
+					<p><span>Common Lane Patterns:</span></p>
 					<ul>
-						<li>House Shot: Standard recreation oil pattern. It typically puts heavier oil in the center and dry oil on the edges, acting as a "funnel" to help the ball hook into the pocket.</li>
-						<li>Sport Shot: Competitive, flat patterns used in tournaments (e.g., PBA patterns). They lack the forgiving "funnel" and demand precise accuracy and ball-reaction adjustments.</li>
+						<li><span>House Shot:</span> Standard recreation oil pattern. It typically puts heavier oil in the center and dry oil on the edges, acting as a "funnel" to help the ball hook into the pocket.</li>
+						<li><span>Sport Shot:</span> Competitive, flat patterns used in tournaments (e.g., PBA patterns). They lack the forgiving "funnel" and demand precise accuracy and ball-reaction adjustments.</li>
 					</ul>
 					
 					<div class = "gridcontainer">					
@@ -692,19 +702,19 @@
 					<div id = "gamearea">
 						<div class = "bowlingpins-formation">
 							<!-- Definition of the images to arange them in bowling formation -->
-							<img class = "bowlingpin pin-10" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-9" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-8" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-7" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-6" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-5" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-4" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-3" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-2" src = "images/BowlingPin.png">
-							<img class = "bowlingpin pin-1" src = "images/BowlingPin.png">
+							<img class = "bowlingpin pin-10" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-9" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-8" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-7" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-6" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-5" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-4" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-3" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-2" src = "images/BowlingPin.png" alt = "Bowling Pin">
+							<img class = "bowlingpin pin-1" src = "images/BowlingPin.png" alt = "Bowling Pin">
 						</div>
 						<div id = "triggerzone"></div>
-						<img id = "gameball" src = "images/RollingBall.png" title = "Original Photo by Brunswick Bowling" alt = "A swirl-patterned bowling ball featuring a vibrant blend of magenta, deep pink, and dark blue colors. The white engraved text in the center reads 'INFINITY QUEST' with a stylized infinity symbol looped through the wording.">
+						<img id = "gameball" src = "images/RollingBall.png" alt = "A swirl-patterned bowling ball featuring a vibrant blend of magenta, deep pink, and dark blue colors. The white engraved text in the center reads 'INFINITY QUEST' with a stylized infinity symbol looped through the wording.">
 					</div>
 					
 					<br>
@@ -718,6 +728,9 @@
 												
 						<button id = "bowlBall">RELEASE</button>
 						<button id = "resetGame">RESET GAME</button>
+						
+						<p>Bowling Ball Image Reference: <a href = "https://brunswickbowling.com/products/balls/current/infinity-quest-pearl">Original Photo by Brunswick Bowling</a></p>
+						<p>Bowling Pin Image Reference: <a href = "https://www.vecteezy.com/free-png/bowling-pin">Original Photo by Vecteezy</a></p>
 					</div>
 				</article>
 			</section>
@@ -728,46 +741,15 @@
 			<button id="btnFS" class = "aligncenter">Full Screen</button>
 			<button id="btnWS" class = "aligncenter">Exit Full Screen</button>
 			
-			<div class = "gridcontainer">
-				<div class = "aligntextleft">
-				<!-- Note down the input elements below -->
-					Email: <input type="email"><br>
-					Password: <input type="password"><br>
-					Number: <input type="number"><br>
-					Date: <input type="date"><br>
-					URL: <input type="url"><br>
-					Telephone: <input type="tel"><br>
-					Checkbox: 
-					<input type="checkbox"> Option 1 
-					<input type="checkbox"> Option 2 
-					<input type="checkbox"> Option 3<br>
-					Radio: 
-					<input type="radio"> Choice A 
-					<input type="radio"> Choice B 
-					<input type="radio"> Choice C<br>
-					Dropdown: 
-					<select>
-					<option>Option X</option>
-					<option>Option Y</option>
-					</select><br>
-					Comments:<br><textarea rows="5">
-					</textarea><br>
-				</div>
-				
-				<div>					
-					<div id = "qrCodeArea">
-						<p>Scan the QR Code below to view the website on your mobile device:</p>
-						<img id = "qrCodeImg" class = "center-img" src = "images/qrcode.png" title = "Scan this code with your mobile device" alt = "The QR Code to display the website on mobile devices">
-					</div>
-				</div>
+			<div id = "qrCodeArea">
+				<p>Scan the QR Code below to view the website on your mobile device:</p>
+				<img id = "qrCodeImg" class = "center-img" src = "images/qrcode.png" title = "Scan this code with your mobile device" alt = "The QR Code to display the website on mobile devices">
 			</div>
 			
 			<br>
 			
 			<p>Created by Lee Zhi Heng (Li Zhiheng) 李志恒</p>
 			<p>Copyright 2026</p>
-			<p>Window inner width: <span id="width"></span></p>
-			<p>Window inner height: <span id="height"></span></p>
 		</footer>
 	</body>
 </html>
