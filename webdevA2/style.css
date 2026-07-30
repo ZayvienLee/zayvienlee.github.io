@@ -99,7 +99,28 @@ footer p {margin-left: 0em;}
 .removemargin {margin: 0;}
 
 /* This defines the style of the pages */
-.page {display:flex;}
+.page {
+	display:flex;
+}
+
+/* Used to animate when the page is opened, or (for the header and footer, when the webpage is loaded) */
+.fade {
+	animation: fadein 0.5s ease-out forwards;
+	/* It starts fast and slows down towards the end, AND retain the final key frame */
+}
+
+/* The supporting animation to include when the page is opened */
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		transform: translateY(20px); /* Start at a lower position */
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* Reset back to its intended position */
+	}
+}
 
 nav ul li {display: inline;}
 
@@ -313,21 +334,6 @@ input[type="range"]#sliderAngle {
 	height: 50px;
 }
 
-/* The thumb styling (Showing the oscillating icon) */
-/* input[type="range"]#sliderAngle::-webkit-slider-thumb { /* This is for Chrome, Safari, Edge, and Opera */
-	/* -webkit-appearance: none; /* This resets the native thumb styles */
-	/* height: 50px; */
-	/* width: 10px; */
-	/* background-color: #00d8d8; /* Vibrant teal */
-/* } */
-
-/* input[type="range"]#sliderAngle::-moz-range-thumb { /* The styling for Firefox */
-	/* border: none; /* Removes the default FireFox border */
-	/* height: 50px; */
-	/* width: 10px; */
-	/* background-color: #00d8d8; /* Vibrant teal */
-/* } */
-
 .bowlingpins-formation {
 	position: relative;
 	margin: 0 auto;
@@ -362,7 +368,7 @@ input[type="range"]#sliderAngle {
 	}
 	
 	100% {
-		rotation: rotate(90deg);
+		transform: rotate(90deg);
 	}
 }
 

@@ -6,18 +6,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="icon" type="image/png" href="/images/Icon/Icon.png">
+		<link rel="icon" type="image/png" href="./images/Icon/Icon.png">
 		<title>Bowling</title>
 		<link href="style.css" type="text/css" rel="stylesheet">
 		<script src = "main.js" defer></script>
-		<link rel = "manifest" href = "manifest.json">
 	</head>
 	
 	<body>
-		<header>
+		<!--
+		Link to the Sound Effects:
+		https://pixabay.com/sound-effects/search/bowling/
+		https://pixabay.com/sound-effects/search/fail/
+		https://pixabay.com/sound-effects/search/game%20end/
+		https://pixabay.com/sound-effects/search/applause/
+		-->
+		<header class = "fade">
 			<h1><img src = "images/Icon/Icon.png" id = "icon" alt = "Website Logo">Bowling</h1>
 		</header>
-		<nav class = "cls_mainnav"> <!--menu system-->
+		<nav class = "cls_mainnav fade"> <!--menu system-->
 			<button id = "hamIcon"><img src = "images/HamburgerIcon.jpg" alt = "Hamburger Menu Icon"></button>
 			<ul>
 				<li><button id = "page1btn">Home</button></li>
@@ -27,7 +33,7 @@
 			</ul>
 		</nav>
 		<main>
-			<section class = "page" id = "page1">
+			<section class = "page fade" id = "page1">
 				<h2>Home (What is Bowling All About?)</h2>
 				<p>Bowling is a recreational and competitive sport where players roll a heave ball down a wooden 
 				or synthetic land to knock down 10 pins arranged in a triangle. A standard game consists of 10 frames, 
@@ -74,7 +80,7 @@
 				</ul>
 			</section>
 			
-			<section class = "page" id = "page2">
+			<section class = "page fade" id = "page2">
 				<h2>Types of Bowling Balls & Lanes</h2>
 				<p>Bowling Balls and Lanes are not all the same. They each have different properties and are matched based on the friction and oil patterns.</p>
 				<p>
@@ -242,22 +248,22 @@
 							<h4>Description</h4>
 							<p>Bowling ball core types include pancake, symmetrical, and asymmetrical desings, which dictate how a ball rolls, hooks, and flares on the lane.</p>
 							
+							<p>Pancake Cores:</p>
 							<ul>
-								Pancake Cores:
 								<li><span>Shape:</span> Flat, circular disk embedded near the top of the ball.</li>
 								<li><span>Motion:</span> Minimal flare with a very straight, predictable path.</li>
 								<li><span>Use Case:</span> Found mostly in polyester or plastic spare balls.</li>
 							</ul>
 							
+							<p>Symmetrical Cores:</p>
 							<ul>
-								Symmetrical Cores:
 								<li><span>Shape:</span> Evenly balanced weight distribution around the center (like a lightbulb or oval).</li>
 								<li><span>Motion:</span> Smooth, predictable, and controllable arcing motion.</li>
 								<li><span>Use Case:</span> Best for beginners, league bowlers, and dry-to-medium lane conditions.</li>
 							</ul>
 							
-							<ul>
-								Asymmetrical Cores:
+							<p>Asymmetrical Cores:</p>
+							<ul>								
 								<li><span>Shape:</span> Uneven weight distribution with a distinct mass bias or Preferential Spin Axis (PSA) marker.</li>
 								<li><span>Motion:</span> Stronger, sharper, and more angular backend reaction with high flare potential.</li>
 								<li><span>Use Case:</span> Best for advanced players, high rev rates, and heavy oil patterns.</li>
@@ -342,7 +348,7 @@
 				</article>
 			</section>
 			
-			<section class = "page" id = "page3">
+			<section class = "page fade" id = "page3">
 				<h2>Different Throwing Styles</h2>
 				
 				<p>No player has the exact same style of throwing a bowling ball. 
@@ -351,12 +357,12 @@
 				<p>Bowling styles generally fall into six main categories based on release, ball speed, and rate of revolution:</p>
 				
 				<ul>
-					<li>Strokers (classic, smooth)</li>
-					<li>Crankers (high revs, power)</li>
-					<li>Tweeners (versatile balance)</li>
-					<li>Two-Handers (modern, maximum spin)</li>
-					<li>Spinners (helicopter spin)</li>
-					<li>Straight Bowlers (beginner-friendly)</li>
+					<li><span>Strokers</span> (classic, smooth)</li>
+					<li><span>Crankers</span> (high revs, power)</li>
+					<li><span>Tweeners</span> (versatile balance)</li>
+					<li><span>Two-Handers</span> (modern, maximum spin)</li>
+					<li><span>Spinners</span> (helicopter spin)</li>
+					<li><span>Straight Bowlers</span> (beginner-friendly)</li>
 				</ul>
 				
 				<br>
@@ -431,7 +437,7 @@
 							</ul>
 							
 							<h4>Recommended Bowling Balls:</h4>
-							<p>As they impart fewer revolutions and less axis rotation than crankers, they mostly use symmetrical core reactive balls with solid or hybrid coverstocks, which grip medium oil without overreacting.</p>
+							<p>As they impart fewer revolutions and less axis rotation than crankers, they mostly use <span>symmetrical core reactive balls with solid or hybrid coverstocks</span>, which grip medium oil without overreacting.</p>
 						</article>
 						
 						<article>
@@ -498,7 +504,7 @@
 							</p>
 														
 							<h4>Recommended Bowling Balls:</h4>
-							<p>For this type of throw, it is recommended to use strong reactive resin or asymmetrical core bowling balls, as they are designed to flare and snap aggressively on the backend of the lane to match the high rev rate.</p>
+							<p>For this type of throw, it is recommended to use <span>strong reactive resin or asymmetrical core bowling balls</span>, as they are designed to flare and snap aggressively on the backend of the lane to match the high rev rate.</p>
 							
 						</article>
 						
@@ -539,8 +545,8 @@
 							<p>An actually delivery involves the use both hands simultaneously to give force to the ball</p>
 																					
 							<h4>Recommended Bowling Balls:</h4>
-							<p>This style of bowling required agressive, asymmetrical cores for angularity and strong solid or hybrid reactive coverstocks to handle the high rev rates. 
-							The most popular types for this type of throw are Reactive Resin (asymmetrical cores) for heavy hook and pin carry, Urethane for control on dry lanes, and Polyester (Plastic) for shooting spares.</p>
+							<p>This style of bowling required agressive, <span>asymmetrical cores</span> for angularity and strong solid or hybrid reactive coverstocks to handle the high rev rates. 
+							The most popular types for this type of throw are <span>Reactive Resin</span> (asymmetrical cores) for heavy hook and pin carry, <span>Urethane</span> for control on dry lanes, and <span>Polyester (Plastic)</span> for shooting spares.</p>
 						</article>
 						
 						<article>
@@ -593,6 +599,7 @@
 							</figure>
 							
 							<h4>How to perform the throw:</h4>
+							<p>Everyone should know how to perform this throw eventually, as amateurs. However, if not, then this is how to do it.</p>
 							<ol>
 								<li>Stand with your feet shoulder-width apart, with your dominant foot slightly behind the other. Note: For right-handed bowlers, place your right foot on the 15th board (roughlly in the center)</li>
 								<li>Do not look directly at the pins, focusing on the second arrow (the 10th board) from the right, and aligning your hips and shoulders toward this mark.</li>
@@ -613,14 +620,14 @@
 														
 							<h4>Recommended Bowling Balls:</h4>
 							<p>The primary focus for this style of straight-line trajectory is on the coverstock and core combination.</p>
-							<p>The most common ball for this throw is Plastic (Polyester) as they create the least friction and go virtually dead-straight, excellent for beginners, for picking up spares, and for dry lane conditions.</p>
+							<p>The most common ball for this throw is <span>Plastic (Polyester)</span> as they create the least friction and go virtually dead-straight, excellent for beginners, for picking up spares, and for dry lane conditions.</p>
 							<p>Urethane balls are also acceptable, as they offer smoother, slightly more predictable rool and improved pin carry, highly durable and great for casual bowlers who want to learn how to control their shot's direction without massive hook potential.</p>
 						</article>
 					</div>
 				</article>
 			</section>
 			
-			<section class = "page" id = "page4">
+			<section class = "page fade" id = "page4">
 				<h2>Trivia, Quiz & Mini-Game</h2>
 				
 				<article>
@@ -735,7 +742,7 @@
 				</article>
 			</section>
 		</main>
-		<footer>
+		<footer class = "fade">
 			<br>
 			
 			<button id="btnFS" class = "aligncenter">Full Screen</button>

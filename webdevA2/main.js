@@ -139,12 +139,12 @@ const quizData =
 	},
 ];
 
-// Randomizes the order of the questions using the Fisher-Yates shuffle algorithm
-function shuffleQuestions(array)
+// Randomizes the order of the array using the Fisher-Yates shuffle algorithm. Used by the Question Data for the Quiz and Pins for the Bowling Game
+function shuffleArray(array)
 {
 	for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        const j = Math.floor(Math.random() * (i + 1)); // This correctly includes the current element i in the pool of potential swap choices
+        [array[i], array[j]] = [array[j], array[i]]; // This swaps the elements directly using the destructing assighment syntax
     }
     return array;
 }
@@ -153,22 +153,23 @@ function shuffleQuestions(array)
 function loadQuiz()
 {
 	// Randomize the questions array upon loading of the page
-    shuffleQuestions(quizData);
+    shuffleArray(quizData);
 	
 	quizBox.innerHTML = ""; // Clear existing content
 	
-	quizData.forEach((q, qIndex) => {
+	quizData.forEach(function(q, qIndex) 
+	{
         // Randomize the options for the current question
-        const shuffledOptions = shuffleQuestions([...q.options]);
+		// A shallow copy is created, with the spread operator
+        const shuffledOptions = shuffleArray([...q.options]);
 
         // Create HTML structure for the question block
-        let optionsHtml = shuffledOptions.map(opt => `
-			<label>
-				<input type="radio" name="q${qIndex}" value="${opt}">
-				${opt}
-			</label>
-        `).join("");
+        let optionsHtml = shuffledOptions.map(
+			function(opt) {
+				return `<label><input type="radio" name="q${qIndex}" value="${opt}">${opt}</label>`;
+			}).join("");
 
+		// Adds the content to the quiz
         quizBox.innerHTML += `
 			<fieldset class="question-block">
 				<legend>${qIndex + 1}. ${q.question}</legend>
@@ -180,14 +181,20 @@ function loadQuiz()
 
 // Used to check the answers to the quiz
 function CheckAns(){  
-	score=0; //reset score to 0, check ans and give score if correct
+	score = 0; //reset score to 0, check ans and give score if correct
 	
-	quizData.forEach((q, qIndex) => {
-        const selectedOption = document.querySelector(`input[name="q${qIndex}"]:checked`);
-        const block = document.querySelectorAll('.question-block')[qIndex];
+	// For every question, check if the answer is correct
+	quizData.forEach(function(q, qIndex) 
+	{
+        const selectedOption = document.querySelector(`input[name="q${qIndex}"]:checked`); // Gets the chosen answer based on the chosen radio button
+        const block = document.querySelectorAll('.question-block')[qIndex]; // Selects the corresponding element that holds that specific question
 		
+		// This resets the style first to avoid overlapping behaviour
+		block.style.backgroundColor = "";
+		
+		// Before checking the answer, check if the option on the question is unanswered
 		if (selectedOption) {
-            if (selectedOption.value === q.answer)
+            if (selectedOption.value === q.answer) // Checks if the option selected is the answer
 			{
                 score++;
                 block.style.backgroundColor = "#228770"; // Correct answers will be marked in darker shade of green
@@ -199,9 +206,8 @@ function CheckAns(){
         }
 		else
 		{
-            block.style.backgroundColor = "#911f19"; // Incorrect answers will be marked in a darker shade of red
-			// block.style.backgroundColor = "#824c00"; // Unanswered questions are marked in a darker shade of orange
-        }
+			block.style.backgroundColor = "#824c00"; // Unanswered questions are marked in a darker shade of orange
+		}
     });
 	
 	scorebox.innerHTML="Score:"+score;
@@ -291,8 +297,6 @@ sliderRPM.addEventListener('input', UpdateRPMSlider);
 let gameLastTime = 0;
 let gameAnimateID = null; // Set the animate id to null first
 let game_deltaTime = 0;
-let minPins = 0;
-let maxPins = 0;
 let gameScore = 0; // Score the player achieves
 let streak = 0; // Increases the score for accuracy
 
@@ -574,7 +578,8 @@ function choosePins(min, max) {
 	
 	// This is needed to randomise the pins that fall
 	const count = Math.floor(Math.random() * (max - min + 1)) + min;
-	const shuffledPins = [...BowlingPins].sort(() => 0.5 - Math.random());
+	const shuffledPins = shuffleArray([...BowlingPins]); // Shuffle the pins with the defined function above
+	
 	const chosenPins = shuffledPins.slice(0, count);
 	
 	// This is to 'knock down' the pins with animation and opacity changes
