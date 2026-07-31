@@ -133,7 +133,16 @@ button {
 nav.cls_mainnav ul {
 	padding-left: 0;
 	margin-left: 0;
+	display: flex;
+	gap: 20px;
 }
+
+nav.cls_mainnav ul li {
+	display: flex;
+	flex: 1;
+}
+
+nav ul li button {flex: 1;}
 
 img.center-img {
 	display: block;
@@ -234,7 +243,6 @@ figure
 	border: none;
 	padding: 0;
 	margin: 0;
-	display: none;
 }
 
 .gridcontainer
@@ -244,6 +252,7 @@ figure
 	height: 100%;
 	gap: 1.25em;
 	grid-template-rows: auto;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 /* CSS for the sprites of the frames, setting the dimensions and image reference */
@@ -396,6 +405,15 @@ input[type="range"]#sliderAngle {
 /* This is for the the web which is smaller than 800px in size */
 @media (max-width:800px)
 {
+	nav.cls_mainnav ul {
+		display: block;
+		gap: 0px;
+	}
+	
+	nav.cls_mainnav ul {
+		display: block;
+	}
+	
 	/*make a menu items vertical*/
 	nav ul li {display:block;}
 	/* unhide menu icon */
@@ -411,8 +429,13 @@ input[type="range"]#sliderAngle {
 		margin-left: 0;
 		display: flex;
 	}
+	
+	li button {display: none;}
 
-	.menuShow li button {flex: 1;}
+	.menuShow li button {
+		display: block; 
+		flex: 1;
+	}
 	
 	/* to unhide menu items */
 	.menuShow {
@@ -426,24 +449,4 @@ input[type="range"]#sliderAngle {
 	
 	#qrCodeArea{display:none;} /*hide QR code and the text */
 	h1::after{content:" (mobile)";}/*append text 'mobile’ */
-}
-
-@media (min-width:801px)
-{
-	nav.cls_mainnav ul {
-		display: flex;
-		gap: 20px;
-	}
-	
-	nav.cls_mainnav ul li {
-		display: flex;
-		flex: 1;
-	}
-	
-	nav ul li button {flex: 1;}
-	
-	.gridcontainer
-	{
-		grid-template-columns: repeat(2, 1fr);
-	}
 }

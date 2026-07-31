@@ -17,11 +17,12 @@ hamBtn.addEventListener("click", toggleMenus);
 
 
 // This is the required code for the quiz
-const btnSubmit=document.querySelector("#btnSubmit"); 
-btnSubmit.addEventListener("click",CheckAns);
-const scorebox=document.querySelector("#scorebox");
+const btnSubmit = document.querySelector("#btnSubmit"); 
+btnSubmit.addEventListener("click", CheckAns); // It is first initalised to check the answer first
+const scorebox = document.querySelector("#scorebox");
 const quizBox = document.getElementById("quiz-box");
 var score = 0;
+var radioButtons; // Purpose is to prevent the user from randomly clicking and submitting repeatedly until all answers are correct.
 
 // Code to toggle the fullscreen on Desktop
 const btnFS=document.querySelector("#btnFS");
@@ -166,7 +167,7 @@ function loadQuiz()
         // Create HTML structure for the question block
         let optionsHtml = shuffledOptions.map(
 			function(opt) {
-				return `<label><input type="radio" name="q${qIndex}" value="${opt}">${opt}</label>`;
+				return `<label><input type="radio" class = "optionRadioButton" name="q${qIndex}" value="${opt}">${opt}</label><br>`;
 			}).join("");
 
 		// Adds the content to the quiz
@@ -177,6 +178,12 @@ function loadQuiz()
 			</fieldset>
         `;
 	});
+	
+	// Declares all the radio buttons created for the quiz after it is created.
+	radioButtons = document.getElementsByClassName("optionRadioButton");
+	
+	btnSubmit.innerHTML = "Submit"; // Inform the user to submit when they are done
+	scorebox.innerHTML = "Not submitted";
 }
 
 // Used to check the answers to the quiz
@@ -210,7 +217,24 @@ function CheckAns(){
 		}
     });
 	
-	scorebox.innerHTML="Score:"+score;
+	// Disable ALL the radioButtons to prevent cheating
+	for (const radioButton of radioButtons) {
+		radioButton.disabled = true;
+	}
+	
+	btnSubmit.removeEventListener("click", CheckAns); // Remove the check answer event
+	btnSubmit.addEventListener("click", resetQuiz); // Adds the reset quiz event
+	
+	btnSubmit.innerHTML = "Try Again"; // Inform the user that if they want to restart the quiz, they should click
+	scorebox.innerHTML = "Score:" + score + "<br>Click the button above to try the quiz again.";
+}
+
+// This is to reset the quiz
+function resetQuiz() {
+	btnSubmit.removeEventListener("click", resetQuiz); // Remove the reset quiz event
+	btnSubmit.addEventListener("click", CheckAns); // Adds the check answer event
+	
+	loadQuiz();
 }
 
 // Initialize the quiz on load of the webpage
@@ -239,7 +263,7 @@ function animationBall (currentTime) {
 	currentRotation %= 360;
 	
 	// Rotate the element
-	spinElement.style.transform = `rotate(${currentRotation}deg)`;
+	spinElement.style.transform = "rotate("+ currentRotation +"deg)";
 	
 	// Request the next frame recursively
 	requestAnimationFrame(animationBall);
@@ -254,28 +278,29 @@ const outputRPM = document.querySelector("#outputRPM");
 // The function to update when the slider of the RPM is adjusted
 function UpdateRPMSlider() {
 	var textLine;
+	var RPM = event.target.value;
 	
-	if (event.target.value < 200)
+	if (RPM < 200)
 	{
 		textLine = "Straight / Stroker / Spinner";
 	}
-	else if (event.target.value < 250)
+	else if (RPM < 250)
 	{
 		textLine = "Stroker / Spinner";
 	}
-	else if (event.target.value < 300)
+	else if (RPM < 300)
 	{
 		textLine = "Stroker / Spinner / Tweener";
 	}
-	else if (event.target.value < 350)
+	else if (RPM < 350)
 	{
 		textLine = "Tweener";
 	}
-	else if (event.target.value < 370)
+	else if (RPM < 370)
 	{
 		textLine = "Tweener / Cranker";
 	}
-	else if (event.target.value < 400)
+	else if (RPM < 400)
 	{
 		textLine = "Cranker";
 	}
@@ -286,7 +311,7 @@ function UpdateRPMSlider() {
 	
 	rotationSpeed = event.target.value * (360 / 60000); // Set the rotationSpeed as the degress of turn per millisecond.
 	
-	outputRPM.textContent = `Revolutions Per Minute: ${event.target.value}; Throw Type: ${textLine}`;
+	outputRPM.textContent = "Revolutions Per Minute: " + event.target.value + "; Throw Type: " + textLine;
 }
 
 sliderRPM.addEventListener('input', UpdateRPMSlider);
@@ -294,9 +319,7 @@ sliderRPM.addEventListener('input', UpdateRPMSlider);
 
 
 // Below is the required code for the mini game
-let gameLastTime = 0;
 let gameAnimateID = null; // Set the animate id to null first
-let game_deltaTime = 0;
 let gameScore = 0; // Score the player achieves
 let streak = 0; // Increases the score for accuracy
 
@@ -353,12 +376,7 @@ var scoreAverage = 0;
 
 var attempts = 12; // Each game has 12 attempts
 
-function gameUpdate(gameCurrentTime) {
-	if (!gameLastTime) gameLastTime = gameCurrentTime;
-	
-	// Get the deltatime
-	game_deltaTime = (gameCurrentTime - gameLastTime) / 1000;
-	gameLastTime = gameCurrentTime;
+function gameUpdate() {
 	
 	ballCenterY -= 4; // The y value remains fixed
 	ballCenterX += sineValue; // The x value moves according to the direction stated by the sine value
@@ -366,11 +384,11 @@ function gameUpdate(gameCurrentTime) {
 	ballRotation += 30; // Set the ballRotation per frame.
 	ballRotation %= 360;
 	
-	Bowlingball.style.transform = `rotate(${ballRotation}deg)`; // Set the moving ball's rotation
+	Bowlingball.style.transform = "rotate(" + ballRotation + "deg)"; // Set the moving ball's rotation
 	
 	// Change the ball's position
-	Bowlingball.style.left = `${ballCenterX}px`;
-	Bowlingball.style.top = `${ballCenterY}px`;
+	Bowlingball.style.left = ballCenterX + "px";
+	Bowlingball.style.top = ballCenterY + "px";
 	
 	// The intended logic for the game (delete this line later)
 	
@@ -440,13 +458,19 @@ function nextRound() {
 	if (attempts > 0)
 	{
 		bowlBallButton.disabled = false;
-		if (intervalDirection == null) intervalDirection = setInterval(changeDirection, 30);
+		if (intervalDirection == null) intervalDirection = setInterval(changeDirection, chooseNumberInclusive(15, 30));
+		// The above checks if the variable is null first before assigning the interval.
+		// The required method is then called for a specified number of milliseconds.
 		
 		scoreBoard.innerHTML = `Score: ${gameScore}<br>Attempts Left: ${attempts}`;
 	}
 	else
 	{
 		gameEndSound.play(); // The game is over.
+		
+		// If the applause photo is playing, stop it and reset back to beginning
+		applauseAudio.pause();
+		applauseAudio.currentTime = 0;
 		
 		if (gameScore >= 200)
 		{
@@ -465,6 +489,14 @@ function nextRound() {
 	}
 	
 	resetGameButton.disabled = false;
+}
+
+// Determines how fast the marker oscillates.
+function chooseNumberInclusive(min, max) {
+	// This returns a number between the min and max inclusive
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+	// It first generates a floating-point number, then determines the total number of possible integers within the range,
+	// then rounds the number to the nearest whole number, followed by shifting the range upward to start at the desired minimum value.
 }
 
 // This detects if the ball has collided with the intended collision element
@@ -500,10 +532,10 @@ function resetBall() {
 	ballCenterY = 570;
 	
 	ballRotation = 0; // Reset the ball's rotation to 0
-	Bowlingball.style.transform = `rotate(${ballRotation}deg)`;
+	Bowlingball.style.transform = "rotate(" + ballRotation + "deg)";
 	
-	Bowlingball.style.left = `${ballCenterX}px`;
-	Bowlingball.style.top = `${ballCenterY}px`;
+	Bowlingball.style.left = ballCenterX + "px";
+	Bowlingball.style.top = ballCenterY + "px";
 	
 	Bowlingball.style.opacity = "1.0";
 }
@@ -577,16 +609,16 @@ function changeDirection() {
 function choosePins(min, max) {
 	
 	// This is needed to randomise the pins that fall
-	const count = Math.floor(Math.random() * (max - min + 1)) + min;
-	const shuffledPins = shuffleArray([...BowlingPins]); // Shuffle the pins with the defined function above
+	const count = chooseNumberInclusive(min, max);
 	
-	const chosenPins = shuffledPins.slice(0, count);
+	// Shuffle the pins
+	// This copies all of the elements into a new array, then the shuffled array is saved
+	const shuffledPins = shuffleArray([...BowlingPins]);
+	
+	const chosenPins = shuffledPins.slice(0, count); // Choose from the list of the pins what pins to knock down
 	
 	// This is to 'knock down' the pins with animation and opacity changes
-	for (const pin of chosenPins) {
-		pin.classList.add("knockPins");
-		pin.style.opacity = "0";
-	}
+	knockDownPins(chosenPins);
 	
 	// Increment the game's score.
 	gameScore += count + (count * Math.round(streak / 2)); // Streak lost. Penalty.
@@ -596,13 +628,18 @@ function choosePins(min, max) {
 
 // Should all pins be knocked down, remove all of them
 function removeAllPins() {
-	for (const pin of BowlingPins) {
-		pin.classList.add("knockPins");
-		pin.style.opacity = "0";
-	}
+	knockDownPins(BowlingPins);
 	
 	gameScore += 10 + (10 * Math.round(streak / 2)); // All 10 pins are knocked down.
 	streak += 1; // Streak increased by 1
+}
+
+// Function to knock down the pins
+function knockDownPins(pinsList) {
+	for (const pin of pinsList) {
+		pin.classList.add("knockPins");
+		pin.style.opacity = "0";
+	}
 }
 
 // Initalise the game first
