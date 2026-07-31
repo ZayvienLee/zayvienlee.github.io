@@ -410,37 +410,51 @@ input[type="range"]#sliderAngle {
 		gap: 0px;
 	}
 	
-	nav.cls_mainnav ul {
+	/* make a menu items vertical when shown */
+	.menuShow ul li {
 		display: block;
 	}
 	
-	/*make a menu items vertical*/
-	nav ul li {display:block;}
+	nav ul li {display: none;}
+	
 	/* unhide menu icon */
 	#hamIcon {display:block;} 
 	#hamIcon img {display:block;} 
 	/*hide the menu item list*/
-	nav ul {display:none;}
+	nav ul {
+		display:none;
+		margin: 0;
+	}
 	
 	/* The styles to give the menu if the web is in the small width version */
-	.menuShow li {
+	ul.menuShow li {
 		list-style-type: none;
 		padding-left: 0;
 		margin-left: 0;
 		display: flex;
 	}
-	
-	li button {display: none;}
 
-	.menuShow li button {
+	ul.menuShow li button {
 		display: block; 
 		flex: 1;
 	}
 	
 	/* to unhide menu items */
-	.menuShow {
+	ul.menuShow {
 		display: grid;
 	}
+	
+	/* Hide when the menuShow class is inactive */
+	nav.cls_mainnav ul li {
+		display: none;
+	}
+	
+	/* Show when the menuShow class is active*/
+	nav.cls_mainnav ul.menuShow li {
+		display: flex;
+	}
+	
+	li button {display: none;}
 	
 	.gridcontainer
 	{
